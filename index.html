@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Heritage Cafe | Leicester</title>
+
+  <meta
+    name="description"
+    content="Heritage Cafe — Goan, Portuguese and British favourites in the heart of Leicester."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --cream: #f5efe5;
+      --cream-light: #fbf8f2;
+      --brown: #3b2921;
+      --brown-light: #705b50;
+      --terracotta: #a95d43;
+      --gold: #c49a55;
+      --dark: #211815;
+      --white: #fffdf9;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--brown);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    /* NAV */
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      color: white;
+    }
+
+    nav {
+      height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      font-size: .92rem;
+    }
+
+    .nav-links a {
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      opacity: .65;
+    }
+
+    .nav-cta {
+      background: white;
+      color: var(--brown);
+      padding: 11px 20px;
+      border-radius: 100px;
+      font-weight: 600;
+    }
+
+    .mobile-menu {
+      display: none;
+      font-size: 1.6rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 800px;
+      display: flex;
+      align-items: center;
+      color: white;
+      position: relative;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(32, 21, 17, .78),
+          rgba(32, 21, 17, .18)
+        ),
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2000&q=90")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding-top: 70px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .72rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(4rem, 8vw, 7rem);
+      line-height: .94;
+      letter-spacing: -4px;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 550px;
+      font-size: 1.12rem;
+      opacity: .93;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border-radius: 100px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: white;
+      color: var(--brown);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: white;
+      border: 1px solid rgba(255,255,255,.7);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.1);
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 125px 0;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.8rem, 5vw, 4.7rem);
+      line-height: 1.03;
+      margin-bottom: 25px;
+    }
+
+    .intro p {
+      max-width: 700px;
+      margin: auto;
+      color: var(--brown-light);
+      font-size: 1.05rem;
+    }
+
+    /* STORY */
+
+    .story {
+      padding: 0 0 120px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .story-image {
+      height: 600px;
+      background:
+        url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1100&q=90")
+        center/cover;
+    }
+
+    .story-content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.7rem, 5vw, 4.5rem);
+      line-height: 1.03;
+      margin-bottom: 25px;
+    }
+
+    .story-content p {
+      color: var(--brown-light);
+      margin-bottom: 18px;
+    }
+
+    .story-signature {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      margin-top: 30px;
+    }
+
+    /* MENU */
+
+    .menu-section {
+      background: var(--brown);
+      color: white;
+      padding: 120px 0;
+    }
+
+    .menu-heading {
+      text-align: center;
+      margin-bottom: 65px;
+    }
+
+    .menu-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .menu-card {
+      position: relative;
+      height: 480px;
+      overflow: hidden;
+    }
+
+    .menu-card img {
+      height: 100%;
+      transition: transform .4s;
+    }
+
+    .menu-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .menu-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: end;
+      padding: 30px;
+
+      background:
+        linear-gradient(
+          transparent 35%,
+          rgba(20,12,9,.82)
+        );
+    }
+
+    .menu-overlay h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+    }
+
+    .menu-overlay p {
+      color: #ddd3cb;
+      font-size: .9rem;
+    }
+
+    .menu-button {
+      text-align: center;
+      margin-top: 45px;
+    }
+
+    /* SPECIAL */
+
+    .special {
+      padding: 120px 0;
+      background: var(--cream-light);
+    }
+
+    .special-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .special-image {
+      height: 560px;
+      background:
+        url("https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1100&q=90")
+        center/cover;
+    }
+
+    .special-content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .special-content p {
+      color: var(--brown-light);
+      max-width: 480px;
+      margin-bottom: 30px;
+    }
+
+    /* INSTAGRAM */
+
+    .instagram {
+      padding: 120px 0;
+      text-align: center;
+      background: white;
+    }
+
+    .instagram h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      margin-bottom: 10px;
+    }
+
+    .instagram > .container > p {
+      color: var(--brown-light);
+      margin-bottom: 45px;
+    }
+
+    .insta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .insta-grid img {
+      aspect-ratio: 1;
+      height: auto;
+      transition: .2s;
+    }
+
+    .insta-grid img:hover {
+      opacity: .82;
+    }
+
+    /* LOCATION */
+
+    .location {
+      padding: 120px 0;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .location h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .address {
+      color: var(--brown-light);
+      margin-bottom: 30px;
+    }
+
+    .map {
+      height: 450px;
+
+      background:
+        linear-gradient(
+          rgba(169,93,67,.88),
+          rgba(169,93,67,.88)
+        ),
+        url("https://images.unsplash.com/photo-1524666041070-9cffc5c4b8f6?auto=format&fit=crop&w=1000&q=80")
+        center/cover;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      color: white;
+    }
+
+    .map h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.3rem;
+      margin-bottom: 8px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 70px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 55px;
+    }
+
+    .footer-description {
+      color: #aaa19b;
+      max-width: 350px;
+      margin-top: 15px;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #aaa19b;
+      margin-bottom: 9px;
+      font-size: .9rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #302b27;
+      padding-top: 25px;
+      color: #77716d;
+      font-size: .8rem;
+
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .hero {
+        min-height: 680px;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        letter-spacing: -2px;
+      }
+
+      .story-grid,
+      .special-inner,
+      .location-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story-image {
+        height: 430px;
+      }
+
+      .special-image {
+        height: 430px;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-card {
+        height: 420px;
+      }
+
+      .insta-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      nav {
+        height: 75px;
+      }
+
+      .hero {
+        min-height: 620px;
+      }
+
+      .hero h1 {
+        font-size: 3.3rem;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .intro,
+      .menu-section,
+      .special,
+      .instagram,
+      .location {
+        padding: 85px 0;
+      }
+
+      .story {
+        padding-bottom: 85px;
+      }
+
+      .story-image,
+      .special-image,
+      .map {
+        height: 350px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- NAVIGATION -->
+
+  <header>
+
+    <div class="container">
+
+      <nav>
+
+        <a href="#" class="logo">
+          Heritage Cafe
+        </a>
+
+        <ul class="nav-links">
+
+          <li>
+            <a href="#story">Our Story</a>
+          </li>
+
+          <li>
+            <a href="#menu">Menu</a>
+          </li>
+
+          <li>
+            <a href="#instagram">Instagram</a>
+          </li>
+
+          <li>
+            <a href="#visit" class="nav-cta">
+              Visit Us
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="mobile-menu">
+          ☰
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Goan · Portuguese · British
+        </div>
+
+        <h1>
+          Heritage.
+        </h1>
+
+        <p>
+          A warm Leicester café bringing together authentic
+          Goan and Portuguese flavours with British favourites.
+        </p>
+
+        <div class="buttons">
+
+          <a href="#menu" class="btn btn-primary">
+            Explore Our Menu
+          </a>
+
+          <a href="#visit" class="btn btn-outline">
+            Find Us
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTRO -->
+
+  <section class="intro">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        Welcome to Heritage
+      </div>
+
+      <h2>
+        Food with a story.
+      </h2>
+
+      <p>
+        From freshly prepared breakfasts to authentic Goan
+        specialities, Heritage Cafe brings generations of
+        tradition together in the heart of Leicester.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- STORY -->
+
+  <section class="story" id="story">
+
+    <div class="container">
+
+      <div class="story-grid">
+
+        <div class="story-image"></div>
+
+        <div class="story-content">
+
+          <div class="eyebrow">
+            Our Heritage
+          </div>
+
+          <h2>
+            A tradition
+            passed down.
+          </h2>
+
+          <p>
+            Heritage Cafe began with a family dream in Goa,
+            bringing people together through coffee, food
+            and community.
+          </p>
+
+          <p>
+            Today, that tradition continues in Leicester,
+            combining Goan and Portuguese flavours with
+            British favourites.
+          </p>
+
+          <div class="story-signature">
+            — Samson, Founder & Head Chef
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MENU -->
+
+  <section class="menu-section" id="menu">
+
+    <div class="container">
+
+      <div class="menu-heading">
+
+        <div class="eyebrow">
+          From our kitchen
+        </div>
+
+        <h2>
+          Something for everyone.
+        </h2>
+
+      </div>
+
+
+      <div class="menu-grid">
+
+
+        <div class="menu-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=900&q=90"
+            alt="Breakfast"
+          >
+
+          <div class="menu-overlay">
+
+            <div>
+
+              <h3>
+                Breakfast
+              </h3>
+
+              <p>
+                Start your day the Heritage way.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=90"
+            alt="Goan food"
+          >
+
+          <div class="menu-overlay">
+
+            <div>
+
+              <h3>
+                Goan Specials
+              </h3>
+
+              <p>
+                Authentic flavours with a story.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=90"
+            alt="Coffee"
+          >
+
+          <div class="menu-overlay">
+
+            <div>
+
+              <h3>
+                Coffee & More
+              </h3>
+
+              <p>
+                Fresh coffee, smoothies and more.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="menu-button">
+
+        <a
+          href="#"
+          class="btn btn-primary"
+        >
+          View Full Menu →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SPECIAL -->
+
+  <section class="special">
+
+    <div class="container">
+
+      <div class="special-inner">
+
+        <div class="special-image"></div>
+
+        <div class="special-content">
+
+          <div class="eyebrow">
+            Made with tradition
+          </div>
+
+          <h2>
+            More than
+            just coffee.
+          </h2>
+
+          <p>
+            Discover flavours inspired by Goa and Portugal,
+            alongside familiar British favourites and
+            freshly prepared café classics.
+          </p>
+
+          <a
+            href="#menu"
+            class="btn"
+            style="
+              background: var(--terracotta);
+              color: white;
+            "
+          >
+            Discover the Menu →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INSTAGRAM -->
+
+  <section class="instagram" id="instagram">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        Follow our journey
+      </div>
+
+      <h2>
+        @heritagecafe.uk
+      </h2>
+
+      <p>
+        Food, coffee, family and life at Heritage Cafe.
+      </p>
+
+
+      <div class="insta-grid">
+
+        <!--
+          Replace these with actual Heritage Cafe
+          Instagram photos.
+        -->
+
+        <img
+          src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=90"
+          alt="Heritage Cafe"
+        >
+
+        <img
+          src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=700&q=90"
+          alt="Heritage Cafe food"
+        >
+
+        <img
+          src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=90"
+          alt="Goan inspired food"
+        >
+
+        <img
+          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=90"
+          alt="Coffee"
+        >
+
+        <img
+          src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=700&q=90"
+          alt="Breakfast"
+        >
+
+        <img
+          src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=700&q=90"
+          alt="Cafe interior"
+        >
+
+      </div>
+
+
+      <a
+        href="#"
+        class="btn"
+        style="
+          background: var(--brown);
+          color: white;
+          margin-top: 35px;
+        "
+      >
+        Follow on Instagram →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- LOCATION -->
+
+  <section class="location" id="visit">
+
+    <div class="container">
+
+      <div class="location-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            Come and see us
+          </div>
+
+          <h2>
+            Find us in
+            Leicester.
+          </h2>
+
+          <p class="address">
+
+            <strong>
+              Heritage Cafe
+            </strong>
+
+            <br>
+
+            10 Carts Lane
+
+            <br>
+
+            Leicester
+
+            <br>
+
+            LE1 5FL
+
+            <br><br>
+
+            Monday – Friday: 9am – 5pm
+
+            <br>
+
+            Saturday: 9am – 6pm
+
+            <br>
+
+            Sunday: 10am – 5pm
+
+          </p>
+
+
+          <div class="buttons">
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Heritage+Cafe+10+Carts+Lane+Leicester+LE1+5FL"
+              target="_blank"
+              rel="noopener"
+              class="btn"
+              style="
+                background: var(--brown);
+                color: white;
+              "
+            >
+              Get Directions →
+            </a>
+
+            <a
+              href="tel:+441162536213"
+              class="btn"
+              style="
+                border: 1px solid var(--brown);
+              "
+            >
+              Call Us
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="map">
+
+          <div>
+
+            <div style="
+              font-size: 2.5rem;
+              margin-bottom: 12px;
+            ">
+              📍
+            </div>
+
+            <h3>
+              Heritage Cafe
+            </h3>
+
+            <p>
+              10 Carts Lane
+              <br>
+              Leicester LE1 5FL
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <div class="logo">
+            Heritage Cafe
+          </div>
+
+          <p class="footer-description">
+            Goan, Portuguese and British favourites,
+            served with a little bit of heritage.
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Explore
+          </h4>
+
+          <a href="#story">
+            Our Story
+          </a>
+
+          <a href="#menu">
+            Menu
+          </a>
+
+          <a href="#instagram">
+            Instagram
+          </a>
+
+          <a href="#visit">
+            Visit Us
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Contact
+          </h4>
+
+          <a href="tel:+441162536213">
+            0116 253 6213
+          </a>
+
+          <a href="mailto:heritagecafe77@gmail.com">
+            heritagecafe77@gmail.com
+          </a>
+
+          <a href="#visit">
+            10 Carts Lane
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 Heritage Cafe
+        </span>
+
+        <span>
+          Leicester, UK
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
